@@ -10,5 +10,5 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserLookupResponseDTO {
-    List<UserObjectResponseDTO> data;
+    UserObjectResponseDTO data;
 }

@@ -22,7 +22,10 @@ public class AuthService {
         this.usersService = usersService;
     }
 
-    public void exchangeForAccessToken(String authorizationCode, String codeVerifier){
+    /**
+     * retorna string com username
+     */
+    public String exchangeForAccessToken(String authorizationCode, String codeVerifier){
         var headers = new HttpHeaders();
         headers.add("Content-Type", "application/x-www-form-urlencoded");
 
@@ -49,8 +52,10 @@ public class AuthService {
             throw new HttpClientErrorException(HttpStatus.INTERNAL_SERVER_ERROR, "Failure to retrieve user");
         }
 
-        usersService.save(new User(null, "random", resp.getAccess_token()));
+        var u = new User(null, usersService.retrieveUsername(resp.getAccess_token()), resp.getAccess_token());
 
-        System.out.println(usersService.retrieveUsername(resp.getAccess_token()));
+        usersService.save(u);
+
+        return u.getUsername();
     }
 }

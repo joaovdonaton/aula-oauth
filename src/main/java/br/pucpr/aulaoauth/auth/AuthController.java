@@ -13,7 +13,7 @@ public class AuthController {
     }
 
     @GetMapping("/callback")
-    public void getAccessToken(@RequestParam String challenge, @RequestParam String code){
-        service.exchangeForAccessToken(code, challenge);
+    public String getAccessToken(@RequestParam String challenge, @RequestParam String code){
+        return "Username: " + service.exchangeForAccessToken(code, challenge);
     }
 }

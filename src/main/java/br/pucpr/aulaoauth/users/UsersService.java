@@ -47,6 +47,6 @@ public class UsersService {
             throw new HttpClientErrorException(HttpStatus.INTERNAL_SERVER_ERROR, "Failure to retrieve user");
         }
 
-        return respBody.getData().get(0).getUsername();
+        return respBody.getData().getUsername();
     }
 }
