@@ -1,4 +1,4 @@
-package br.pucpr.aulaoauth.auth.dto;
+package br.pucpr.aulaoauth.lib.apiDTOs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
