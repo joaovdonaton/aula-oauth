@@ -15,6 +15,9 @@
 - É necessário ir no developer portal do Twitter, criar um project e um app (já vem com um por padrão), 
 - Acessar App->Settings e habilitar e configurar o "User Authentication Settings"
 - Acessar App->Keys and Tokens para gerar o Client ID e Secret
+- Deve-se utilizar o oauthdebugger.com para objeter o Authorization code
+  - É necessário incluir os scopes ```users.read tweet.read```
+  - Também é necessário ativar o PKCE e salvar o code challenge.
 - Endpoints da API estão dentro de ```/api/oauth/```
   - ```/callback``` recebe o Authorization Code e o challenge (Code Verifier PKCE usado na hora de criar gerar o Authorization Code)
 - Persistência dos access tokens é feita usando o banco em memória h2, então não é necessário configurar o banco de dados
