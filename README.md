@@ -17,3 +17,5 @@
 - Acessar App->Keys and Tokens para gerar o Client ID e Secret
 - Endpoints da API estão dentro de ```/api/oauth/```
   - ```/callback``` recebe o Authorization Code e o challenge (Code Verifier PKCE usado na hora de criar gerar o Authorization Code)
+- Persistência dos access tokens é feita usando o banco em memória h2, então não é necessário configurar o banco de dados
+- Credenciais para o banco de dados estão no ```src/main/resources/application.properties```, e o endpoint do banco é ```/api/oauth/h2-console```
